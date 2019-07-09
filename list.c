@@ -12,3 +12,7 @@ void main() {
 		REGISTERS elements[MAX];
 	} List;
 }
+
+void initList(List* l) {
+	l->qtElements = 0;
+}
