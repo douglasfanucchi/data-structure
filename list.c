@@ -3,20 +3,21 @@
 void main() {
 	#define MAX 50
 
-	typedef struct{
+	typedef struct {
 		int index;
 	} REGISTERS;
 
-	typedef struct{
+	typedef struct {
 		int qtElements;
 		REGISTERS elements[MAX];
 	} List;
-}
+	
+	void initList(List* l) {
+        	l->qtElements = 0;
+	}
 
-void initList(List* l) {
-	l->qtElements = 0;
-}
-
-int elementsCount(List* l) {
-	return l->qtElements;
+	int elementsCount(List* l) {
+        	return l->qtElements;
+	}
+  
 }
