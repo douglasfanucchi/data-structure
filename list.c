@@ -6,11 +6,11 @@ void main() {
 
 	typedef struct {
 		int index;
-	} REGISTERS;
+	} REGISTER;
 
 	typedef struct {
 		int qtElements;
-		REGISTERS elements[MAX];
+		REGISTER elements[MAX];
 	} List;
 	
 	void initList(List* l) {
@@ -31,7 +31,7 @@ void main() {
 		return true;
 	}
 
-	int searchElements(List* l, int index) {
+	int searchElement(List* l, int index) {
 		if( elementsCount(l) < 1 || elementsCount(l) > 50 ) 
 			return -1;
 
