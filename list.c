@@ -43,7 +43,7 @@ void main() {
 	}
 
 	bool insertElement(List *l, REGISTER element, int key) {
-		if( elementsCount(l) == MAX || key < 0 || key > MAX - 1 || key > elementsCount(l) ) return false;
+		if( elementsCount(l) == MAX || key < 0 || key > elementsCount(l) ) return false;
 
 		for( int i = elementsCount(l); i > key; i-- ) 
 			l->elements[i] = l->elements[i - 1];
