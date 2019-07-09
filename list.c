@@ -16,3 +16,7 @@ void main() {
 void initList(List* l) {
 	l->qtElements = 0;
 }
+
+int elementsCount(List* l) {
+	return l->qtElements;
+}
