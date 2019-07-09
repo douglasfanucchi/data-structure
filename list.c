@@ -30,4 +30,15 @@ void main() {
 
 		return true;
 	}
+
+	int searchElements(List* l, int index) {
+		if( elementsCount(l) < 1 || elementsCount(l) > 50 ) 
+			return -1;
+
+		for( int i = 0; i < l->qtElements; i++ )
+			if( l->elements[i].index == index )
+				return i;
+
+		return -1;
+	}
 }
