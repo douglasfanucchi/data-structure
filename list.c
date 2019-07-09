@@ -14,11 +14,11 @@ void main() {
 	} List;
 	
 	void initList(List* l) {
-        	l->qtElements = 0;
+        l->qtElements = 0;
 	}
 
 	int elementsCount(List* l) {
-        	return l->qtElements;
+        return l->qtElements;
 	}
 
 	bool printList(List* l) {
@@ -40,5 +40,17 @@ void main() {
 				return i;
 
 		return -1;
+	}
+
+	bool insertElement(List *l, REGISTER element, int key) {
+		if( elementsCount(l) == MAX || key < 0 || key > MAX - 1 || key > elementsCount(l) ) return false;
+
+		for( int i = elementsCount(l); i > key; i-- ) 
+			l->elements[i] = l->elements[i - 1];
+
+		l->elements[key] = element;
+		l->qtElements++;
+
+		return true;
 	}
 }
