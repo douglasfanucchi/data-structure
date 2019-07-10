@@ -11,7 +11,7 @@ void main() {
 
 	typedef struct {
 		int qtElements;
-		REGISTER elements[MAX];
+		REGISTER elements[MAX + 1];
 	} List;
 	
 	void initList(List* l) {
@@ -36,11 +36,15 @@ void main() {
 		if( elementsCount(l) < 1 || elementsCount(l) > 50 ) 
 			return -1;
 
-		for( int i = 0; i < l->qtElements; i++ )
-			if( l->elements[i].index == index )
-				return i;
+		int i;
 
-		return -1;
+		l->elements[l->qtElements].index = index;
+		
+		while( l->elements[i].index != index ) i++;
+
+		if( i == l->qtElements ) return -1;
+		
+		return i;
 	}
 
 	bool insertElement(List *l, REGISTER element, int key) {
