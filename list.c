@@ -59,6 +59,20 @@ void main() {
 		return true;
 	}
 
+	bool insertSortElement(List *l, REGISTER element) {
+		if( elementsCount(l) == MAX ) return false;
+
+		int pos = l->qtElements;
+		
+		while(pos > 0 && l->elements[pos - 1].index > element.index) {
+			l->elements[pos] = l->elements[pos - 1];
+			pos--;
+		}
+
+		l->elements[pos] = element;
+		l->qtElements++;
+	}
+
 	bool deleteElement(List* l, int index) {
 		int position = searchElement(l, index);
 
