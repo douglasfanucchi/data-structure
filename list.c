@@ -14,11 +14,11 @@ void main() {
 	} List;
 	
 	void initList(List* l) {
-        l->qtElements = 0;
+        	l->qtElements = 0;
 	}
 
 	int elementsCount(List* l) {
-        return l->qtElements;
+	    return l->qtElements;
 	}
 
 	bool printList(List* l) {
@@ -53,4 +53,18 @@ void main() {
 
 		return true;
 	}
+
+	bool deleteElement(List* l, int index) {
+		int position = searchElement(l, index);
+
+		if( position == -1) return false;
+	
+		for(int i = position; i < l->qtElements - 1; i++)
+			l->elements[i] = l->elements[i + 1];
+
+		l->qtElements--;
+		return true;
+	}
+
+
 }
