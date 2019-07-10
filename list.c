@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 #include <stdbool.h>
 
 void main() {
@@ -66,5 +67,7 @@ void main() {
 		return true;
 	}
 
-
+	bool resetList(List* l) {
+		l->qtElements = 0;
+	}
 }
